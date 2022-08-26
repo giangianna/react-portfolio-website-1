@@ -3,7 +3,34 @@ import "./testimonials.css";
 import AVTR1 from "../../assets/avatar1.jpg";
 import AVTR2 from "../../assets/avatar2.jpg";
 import AVTR3 from "../../assets/avatar3.jpg";
-// import AVTR4 from "../../assets/avatar4.jpg";
+import AVTR4 from "../../assets/avatar4.jpg";
+
+const data = [
+  {
+    avatar: AVTR1,
+    name: "Tina Snow",
+    review:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione iste atque similique nemo dolores ad facilis hic facere asperiores, repudiandae necessitatibus eum. Odit temporibus suscipit quidem ea quam ipsa distinctio!",
+  },
+  {
+    avatar: AVTR2,
+    name: "Shatta Wale",
+    review:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione iste atque similique nemo dolores ad facilis hic facere asperiores, repudiandae necessitatibus eum. Odit temporibus suscipit quidem ea quam ipsa distinctio!",
+  },
+  {
+    avatar: AVTR3,
+    name: "Kwane Despite",
+    review:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione iste atque similique nemo dolores ad facilis hic facere asperiores, repudiandae necessitatibus eum. Odit temporibus suscipit quidem ea quam ipsa distinctio!",
+  },
+  {
+    avatar: AVTR4,
+    name: "Nana Ama",
+    review:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione iste atque similique nemo dolores ad facilis hic facere asperiores, repudiandae necessitatibus eum. Odit temporibus suscipit quidem ea quam ipsa distinctio!",
+  },
+];
 
 const Testimonials = () => {
   return (
@@ -12,42 +39,17 @@ const Testimonials = () => {
       <h2>Testimonials</h2>
 
       <div className="container testimonials__container">
-        <article className="testimonial">
-          <div className="client__avatar">
-            <img src={AVTR1} alt="AVATAR One" />
-          </div>
-          <h5>Ernets Achiever</h5>
-          <small className="client__review">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            accusamus consectetur nesciunt illum magni enim fugiat explicabo
-            deleniti eius fugit beatae, reiciendis pariatur nisi similique, iure
-            exercitationem voluptatibus molestias sit.
-          </small>
-        </article>
-        <article className="testimonial">
-          <div className="client__avatar">
-            <img src={AVTR2} alt="AVATAR Two" />
-          </div>
-          <h5>Ernets Achiever</h5>
-          <small className="client__review">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            accusamus consectetur nesciunt illum magni enim fugiat explicabo
-            deleniti eius fugit beatae, reiciendis pariatur nisi similique, iure
-            exercitationem voluptatibus molestias sit.
-          </small>
-        </article>
-        <article className="testimonial">
-          <div className="client__avatar">
-            <img src={AVTR3} alt="AVATAR Three" />
-          </div>
-          <h5>Ernets Achiever</h5>
-          <small className="client__review">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            accusamus consectetur nesciunt illum magni enim fugiat explicabo
-            deleniti eius fugit beatae, reiciendis pariatur nisi similique, iure
-            exercitationem voluptatibus molestias sit.
-          </small>
-        </article>
+        {data.map(({ avatar, name, review }, index) => {
+          return (
+            <article key={index} className="testimonial">
+              <div className="client__avatar">
+                <img src={avatar} alt="AVATAR One" />
+              </div>
+              <h5>{name}</h5>
+              <small className="client__review">{review}</small>
+            </article>
+          );
+        })}
       </div>
     </section>
   );
